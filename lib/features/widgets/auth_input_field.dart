@@ -4,8 +4,12 @@ import 'package:twitter_clone_flutter/theme/pallete.dart';
 class AuthInputField extends StatelessWidget {
   final TextEditingController controller;
   final String hintText;
+  final bool obscureText;
   const AuthInputField(
-      {Key? key, required this.controller, required this.hintText})
+      {Key? key,
+      required this.controller,
+      required this.hintText,
+      required this.obscureText})
       : super(key: key);
 
   @override
@@ -24,6 +28,9 @@ class AuthInputField extends StatelessWidget {
               )),
           hintText: hintText,
           hintStyle: const TextStyle(fontSize: 18)),
+      obscureText: obscureText,
+      enableSuggestions: !obscureText,
+      autocorrect: !obscureText,
     );
   }
 }

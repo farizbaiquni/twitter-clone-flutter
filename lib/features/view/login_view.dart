@@ -20,7 +20,6 @@ class _LoginViewState extends State<LoginView> {
   final passwordController = TextEditingController();
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     emailController.dispose();
     passwordController.dispose();
@@ -39,6 +38,7 @@ class _LoginViewState extends State<LoginView> {
               AuthInputField(
                 controller: emailController,
                 hintText: 'Email',
+                obscureText: false,
               ),
               const SizedBox(
                 height: 23,
@@ -47,6 +47,7 @@ class _LoginViewState extends State<LoginView> {
               AuthInputField(
                 controller: passwordController,
                 hintText: 'Password',
+                obscureText: true,
               ),
               const SizedBox(
                 height: 23,

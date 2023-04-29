@@ -21,7 +21,10 @@ class AuthController extends StateNotifier<bool> {
       required BuildContext context}) async {
     state = true;
     final res = await _authAPI.signUp(email: email, password: password);
-    res.fold((left) => appShowSnackBar(context: context, content: left.message),
-        (right) => print(right.name));
+    res.fold(
+        (left) => appShowSnackBar(context: context, content: left.message),
+        (right) =>
+            appShowSnackBar(context: context, content: "Sign up success"));
+    state = false;
   }
 }

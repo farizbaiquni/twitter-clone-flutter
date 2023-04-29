@@ -4,7 +4,7 @@ import 'package:twitter_clone_flutter/features/view/login_view.dart';
 import 'package:twitter_clone_flutter/theme/theme.dart';
 
 void main() {
-  runApp(ProviderScope(child: const MyApp()));
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {

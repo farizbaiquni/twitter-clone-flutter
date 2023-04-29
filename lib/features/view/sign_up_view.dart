@@ -48,6 +48,7 @@ class _SignUpViewState extends ConsumerState<SignUpView> {
               AuthInputField(
                 controller: emailController,
                 hintText: 'Email',
+                obscureText: false,
               ),
               const SizedBox(
                 height: 23,
@@ -56,6 +57,7 @@ class _SignUpViewState extends ConsumerState<SignUpView> {
               AuthInputField(
                 controller: passwordController,
                 hintText: 'Password',
+                obscureText: true,
               ),
               const SizedBox(
                 height: 23,
