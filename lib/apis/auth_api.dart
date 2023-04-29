@@ -1,16 +1,23 @@
 import 'package:appwrite/appwrite.dart';
 import 'package:appwrite/models.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:twitter_clone_flutter/core/core.dart';
 import 'package:either_dart/either.dart';
+import 'package:twitter_clone_flutter/core/providers.dart';
+
+final authAPIProvider = Provider((ref) {
+  final account = ref.watch(appWriteAccountProvider);
+  return AuthAPI(account: account);
+});
 
 abstract class IAuthAPI {
   AppFutureEither<User> signUp(
       {required String email, required String password});
 }
 
-class AuthApi extends IAuthAPI {
+class AuthAPI extends IAuthAPI {
   final Account _account;
-  AuthApi({required Account user}) : _account = user;
+  AuthAPI({required Account account}) : _account = account;
 
   @override
   AppFutureEither<User> signUp(

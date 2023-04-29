@@ -20,7 +20,7 @@ class ButtonFullWidth extends StatelessWidget {
           ),
           textStyle: const TextStyle(fontSize: 18),
         ),
-        onPressed: () {},
+        onPressed: onTap,
         child: Text(name));
   }
 }
