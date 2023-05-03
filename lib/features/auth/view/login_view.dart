@@ -2,11 +2,10 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:twitter_clone_flutter/common/common.dart';
-import 'package:twitter_clone_flutter/common/loading-page.dart';
 import 'package:twitter_clone_flutter/contants/constants.dart';
-import 'package:twitter_clone_flutter/features/controller/auth_controller.dart';
-import 'package:twitter_clone_flutter/features/view/sign_up_view.dart';
-import 'package:twitter_clone_flutter/features/widgets/widgets.dart';
+import 'package:twitter_clone_flutter/features/auth/controller/auth_controller.dart';
+import 'package:twitter_clone_flutter/features/auth/view/sign_up_view.dart';
+import 'package:twitter_clone_flutter/features/auth/widgets/widgets.dart';
 import 'package:twitter_clone_flutter/theme/theme.dart';
 
 class LoginView extends ConsumerStatefulWidget {

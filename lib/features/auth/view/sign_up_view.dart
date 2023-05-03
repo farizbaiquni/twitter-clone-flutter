@@ -4,8 +4,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:twitter_clone_flutter/common/common.dart';
 import 'package:twitter_clone_flutter/common/loading-page.dart';
 import 'package:twitter_clone_flutter/contants/constants.dart';
-import 'package:twitter_clone_flutter/features/controller/auth_controller.dart';
-import 'package:twitter_clone_flutter/features/widgets/widgets.dart';
+import 'package:twitter_clone_flutter/features/auth/controller/auth_controller.dart';
+import 'package:twitter_clone_flutter/features/auth/widgets/widgets.dart';
 import 'package:twitter_clone_flutter/theme/pallete.dart';
 
 class SignUpView extends ConsumerStatefulWidget {
