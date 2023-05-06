@@ -8,10 +8,16 @@ class UIConstans {
     return AppBar(
       title: SvgPicture.asset(
         AssetsConstants.twitterLogo,
-        color: Pallete.blueColor,
+        colorFilter: const ColorFilter.mode(Pallete.blueColor, BlendMode.srcIn),
         height: 30,
       ),
       centerTitle: true,
     );
   }
+
+  static List<Widget> pageScreenList = [
+    const Center(child: Text("Feed screen")),
+    const Center(child: Text("Search screen")),
+    const Center(child: Text("Notification screen"))
+  ];
 }
