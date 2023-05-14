@@ -19,6 +19,9 @@ abstract class IAuthAPI {
 }
 
 class AuthAPI extends IAuthAPI {
+  final Account _account;
+  AuthAPI({required Account account}) : _account = account;
+
   @override
   Future<User?> currentUser() async {
     try {
@@ -29,9 +32,6 @@ class AuthAPI extends IAuthAPI {
       return null;
     }
   }
-
-  final Account _account;
-  AuthAPI({required Account account}) : _account = account;
 
   @override
   AppFutureEither<User> signUp(

@@ -12,6 +12,8 @@ class Loading extends StatelessWidget {
 }
 
 class LoadingPage extends StatelessWidget {
+  static route() =>
+      MaterialPageRoute(builder: (context) => const LoadingPage());
   const LoadingPage({super.key});
 
   @override

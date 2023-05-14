@@ -29,7 +29,7 @@ class _SignUpViewState extends ConsumerState<SignUpView> {
   }
 
   void signUp() {
-    ref.read(AuthControllerProvider.notifier).signUp(
+    ref.read(authControllerProvider.notifier).signUp(
         email: emailController.text,
         password: passwordController.text,
         context: context);
@@ -37,7 +37,7 @@ class _SignUpViewState extends ConsumerState<SignUpView> {
 
   @override
   Widget build(BuildContext context) {
-    final bool isLoading = ref.watch(AuthControllerProvider);
+    final bool isLoading = ref.watch(authControllerProvider);
     return Scaffold(
       appBar: appBar,
       body: isLoading

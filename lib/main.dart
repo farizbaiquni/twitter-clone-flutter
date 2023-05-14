@@ -19,10 +19,11 @@ class MyApp extends ConsumerWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: AppTheme.theme,
-      home: ref.watch(currentUserProvider).when(
-          data: (user) {
-            if (user != null) {
-              return const HomeView();
+      home: ref.watch(currentSessionProvider).when(
+          data: (session) {
+            if (session != null) {
+              if (session) return const HomeView();
+              return const LoginView();
             }
             return const LoginView();
           },

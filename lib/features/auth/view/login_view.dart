@@ -22,7 +22,7 @@ class _LoginViewState extends ConsumerState<LoginView> {
   final passwordController = TextEditingController();
 
   void login() {
-    ref.read(AuthControllerProvider.notifier).login(
+    ref.read(authControllerProvider.notifier).login(
         email: emailController.text,
         password: passwordController.text,
         context: context);
@@ -37,11 +37,11 @@ class _LoginViewState extends ConsumerState<LoginView> {
 
   @override
   Widget build(BuildContext context) {
-    final isLoading = ref.watch(AuthControllerProvider);
+    final isLoading = ref.watch(authControllerProvider);
     return Scaffold(
       appBar: appBar,
       body: isLoading
-          ? LoadingPage()
+          ? const LoadingPage()
           : Center(
               child: SingleChildScrollView(
                 padding: const EdgeInsets.symmetric(horizontal: 20),

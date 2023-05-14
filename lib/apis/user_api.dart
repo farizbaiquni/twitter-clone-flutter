@@ -13,6 +13,7 @@ final userAPIProvider = Provider((ref) {
 
 abstract class InterfaceUserAPI {
   FutureEitherVoid addUserInDatabase(UserModel userModel);
+  Future<Document> getDataProfile(String uid);
 }
 
 class UserAPI extends InterfaceUserAPI {
@@ -25,7 +26,7 @@ class UserAPI extends InterfaceUserAPI {
       await database.createDocument(
           databaseId: AppWriteContants.databaseId,
           collectionId: AppWriteContants.usersCollectionId,
-          documentId: ID.unique(),
+          documentId: userModel.uid,
           data: userModel.toMap());
       return const Right(null);
     } on AppwriteException catch (error, stackTrace) {
@@ -33,5 +34,14 @@ class UserAPI extends InterfaceUserAPI {
     } catch (error, stackTrace) {
       return Left(Failure(error.toString(), stackTrace));
     }
+  }
+
+  @override
+  Future<Document> getDataProfile(String uid) async {
+    return await database.getDocument(
+      databaseId: AppWriteContants.databaseId,
+      collectionId: AppWriteContants.usersCollectionId,
+      documentId: uid,
+    );
   }
 }

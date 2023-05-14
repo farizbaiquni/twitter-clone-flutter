@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:twitter_clone_flutter/contants/constants.dart';
+import 'package:twitter_clone_flutter/features/tweet/view/create_tweet_view.dart';
 import 'package:twitter_clone_flutter/theme/pallete.dart';
 
 class HomeView extends StatefulWidget {
@@ -21,6 +22,10 @@ class _HomeViewState extends State<HomeView> {
     });
   }
 
+  void goToCreateTweetView() {
+    Navigator.push(context, CreateTweetView.route());
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +35,7 @@ class _HomeViewState extends State<HomeView> {
         children: UIConstans.pageScreenList,
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: goToCreateTweetView,
         child: const Icon(
           Icons.add,
           color: Pallete.whiteColor,
